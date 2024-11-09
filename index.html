@@ -1515,16 +1515,7 @@ function createNetworkItem(network) {
             addToWatchlist(movieId, movieType, watchlistType);
         }
     });
-    // X    
-    document.addEventListener('click', function(e) {
-        if (e.target.classList.contains('add-to-list') || 
-            (e.target.parentElement && e.target.parentElement.classList.contains('add-to-list'))) {
-            const movieCard = e.target.closest('.movie-card');
-            const movieId = movieCard.dataset.id;
-            const movieType = movieCard.dataset.type;
-            addToWatchlist(movieId, movieType);
-        }
-    });
+    
     
     // Add event listener for My List link
     document.querySelector('a[href="#mylist"]').addEventListener('click', function(e) {
