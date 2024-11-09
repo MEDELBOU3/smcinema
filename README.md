@@ -37,22 +37,22 @@
 
 Explore screenshots from the SMCinema website below:
 
-| ![Screenshot 1](screenshots/home.jpeg) | ![Screenshot 2](screenshots/genrs.jpeg) | ![Screenshot 3](screenshots/popular.jpeg) |
+| ![Screenshot 1](screenshots/home.jpeg) | ![Screenshot 2](screenshots/genrs.jpeg) |![Screenshot 3](screenshots/popular.jpeg) |
 |---------------------------------------------|---------------------------------------------|---------------------------------------------|
 | *Home Page *, *Movies Browsing*             | *Genres*                         | *Most Popular*                           |
 
-| ![Screenshot 4](screenshots/popularmovies.jpeg) | ![Screenshot 5](screenshots/screenshot5.jpeg) | ![Screenshot 6](screenshots/screenshot6.jpeg) |
+| ![Screenshot 4](screenshots/popularmovies.jpeg) | ![Screenshot 5](screenshots/tvshows.jpeg) | ![Screenshot 6](screenshots/comingsoon.jpeg) |
 |---------------------------------------------|---------------------------------------------|---------------------------------------------|
 | *Popular Movies*                    | *Featured Tv-shows*                    | *Upcoming Movies*                        |
 
-| ![Screenshot 7](screenshots/screenshot7.jpeg) | ![Screenshot 8](screenshots/screenshot8.jpeg) | ![Screenshot 9](screenshots/screenshot9.jpeg) |
+| ![Screenshot 7](screenshots/popularnetworks.jpeg) | ![Screenshot 8](screenshots/arabicnetworks.jpeg) | ![Screenshot 9](screenshots/anime-networks.jpeg) |
 |---------------------------------------------|---------------------------------------------|---------------------------------------------|
 | *Global Broadcast Networks*                  | *Arabic Networks*                  | *Anime Networks*                           |
 
-| ![Screenshot 10](screenshots/screenshot10.jpeg) | ![Screenshot 11](screenshots/screenshot11.jpeg) | ![Screenshot 12](screenshots/screenshot12.jpeg) |
+| ![Screenshot 10](screenshots/ed&doc-networks.jpeg) | ![Screenshot 11](screenshots/sport-networks.jpeg) | ![Screenshot 12](screenshots/movie-modal.jpeg) |
 |-----------------------------------------------|-----------------------------------------------|-----------------------------------------------|
 | *Docm and advn Networks*                         | *Sport Networks*                      | *Movie-modal display*                            |
 
-| ![Screenshot 13](screenshots/screenshot13.jpeg) | ![Screenshot 14](screenshots/screenshot14.jpeg) | |
+| ![Screenshot 13](screenshots/movie-modal-cont.jpeg) | ![Screenshot 14](screenshots/playlist.jpeg) | |
 |-----------------------------------------------|-----------------------------------------------|-----------------------------------------------|
 | *Recom and cast modal*                            | *Playliste-with-filter*                           | |
