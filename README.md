@@ -1,27 +1,27 @@
 # SMCinema
 
-SMCinema هو موقع ويب متخصص في عرض الأفلام، المسلسلات، الأنمي، القنوات الرياضية، القنوات العربية والعالمية، بالإضافة إلى القنوات التعليمية والوثائقية. تم بناء الموقع باستخدام تقنيات الويب الحديثة مثل HTML وCSS وJavaScript، مع الاستفادة من API TMDB لجلب بيانات الأفلام والمحتوى.
+*SMCinema* is a specialized web platform for streaming a wide range of movies, series, anime, sports channels, global and Arabic channels, as well as educational and documentary networks. Built with modern web technologies like HTML, CSS, and JavaScript, it utilizes the *TMDB API* to fetch movie and content data dynamically.
 
-## المميزات
+## Features
 
-- *مجموعة واسعة من الأفلام*: تصفح الأفلام من مختلف الأنواع.
-- *مسلسلات متنوعة*: عروض مسلسلات عالمية وعربية.
-- *أنمي*: مشاهدة الأنمي المفضل لديك مع تحديثات مستمرة.
-- *قنوات رياضية*: متابعة المباريات والفعاليات الرياضية مباشرة.
-- *قنوات بث أفلام ومسلسلات*: عروض بث للمحتوى العالمي والعربي.
-- *شبكات تعليمية*: محتوى تعليمي متنوع لجميع الأعمار.
-- *وثائقيات*: مجموعة من الوثائقيات المميزة في مواضيع متعددة.
+- *Wide Collection of Movies*: Browse through movies of various genres.
+- *Diverse Series Library*: Access both global and Arabic series.
+- *Anime Section*: Watch your favorite anime with regular updates.
+- *Live Sports Channels*: Stay updated with live matches and sports events.
+- *Streaming Channels*: Access global and Arabic series and movie streaming channels.
+- *Educational Networks*: Enjoy a variety of educational content for all ages.
+- *Documentaries*: Explore a curated selection of documentaries on various topics.
 
-## التقنيات المستخدمة
+## Technologies Used
 
-- *HTML*: الهيكل الأساسي للموقع.
-- *CSS*: التصميم والتنسيق باستخدام تقنيات CSS.
-- *JavaScript*: التفاعل والوظائف الديناميكية للموقع.
-- *TMDB API*: جلب بيانات الأفلام والمسلسلات والأنمي.
+- *HTML*: For the core structure of the website.
+- *CSS*: To enhance design and styling.
+- *JavaScript*: For dynamic interactions and functionalities.
+- *TMDB API*: For fetching movies, series, and anime data.
 
-## طريقة الاستخدام
+## How to Use
 
-1. *تنزيل المشروع*:
-   يمكنك تنزيل المشروع عبر Git:
+1. *Clone the Repository*:
+   Clone the project using Git:
    ```bash
-   git clone https://github.com/yourusername/smcinema.git
+   git clone https://github.com/MEDELBOU3/smcinema.git
