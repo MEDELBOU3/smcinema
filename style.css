@@ -1,0 +1,225 @@
+.playlist-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 1000;
+    overflow-y: auto;
+    backdrop-filter: blur(8px);
+}
+
+.playlist-content {
+    position: relative;
+    width: 95%;
+    max-width: 1400px;
+    margin: 30px auto;
+    background: linear-gradient(145deg, #1a2634 , #133b68);
+    border-radius: 15px;
+    padding: 30px;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.playlist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.playlist-header h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #22C3E6;
+    text-shadow: 0 0 10px rgba(34, 195, 230, 0.3);
+}
+
+.playlist-tabs {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.playlist-tab {
+    padding: 12px 25px;
+    background: rgba(51, 51, 51, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.playlist-tab:hover {
+    background: rgba(34, 195, 230, 0.2);
+    transform: translateY(-2px);
+}
+
+.playlist-tab.active {
+    background: #22C3E6;
+    box-shadow: 0 0 20px rgba(34, 195, 230, 0.3);
+}
+
+.playlist-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+    max-height: 65vh;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.playlist-items::-webkit-scrollbar {
+    width: 8px;
+}
+
+.playlist-items::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.playlist-items::-webkit-scrollbar-thumb {
+    background: #22C3E6;
+    border-radius: 4px;
+}
+
+.playlist-item {
+    position: relative;
+    background: rgba(51, 51, 51, 0.7);
+    border-radius: 12px;
+    padding: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.playlist-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(34, 195, 230, 0.2);
+}
+
+.playlist-item img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.playlist-item-info {
+    padding: 10px 0;
+}
+
+.playlist-item-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.rating-filter select {
+    padding: 10px 15px;
+    background: rgba(51, 51, 51, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.rating-filter select:focus {
+    outline: none;
+    border-color: #22C3E6;
+}
+
+.remove-from-list {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 0, 0, 0.2);
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.remove-from-list:hover {
+    background: rgba(255, 0, 0, 0.8);
+    transform: scale(1.1);
+}
+
+.empty-message {
+    text-align: center;
+    padding: 40px;
+    color: #888;
+    font-size: 1.2rem;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.close-modal:hover {
+    background: rgba(255, 0, 0, 0.5);
+    transform: rotate(90deg);
+}
+
+@media (max-width: 768px) {
+    .playlist-content {
+        width: 98%;
+        margin: 10px auto;
+        padding: 15px;
+    }
+
+    .playlist-items {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 15px;
+    }
+
+    .playlist-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+
+    .playlist-tab {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .playlist-item-info h3 {
+        font-size: 0.9rem;
+    }
+
+    .remove-from-list {
+        width: 30px;
+        height: 30px;
+        top: 15px;
+        right: 15px;
+    }
+}
