@@ -37,22 +37,30 @@
 
 Explore screenshots from the SMCinema website below:
 
-| ![Screenshot 1](screenshots/home.jpeg) | ![Screenshot 2](screenshots/genrs.jpeg) |![Screenshot 3](screenshots/popular.jpeg) |
-|---------------------------------------------|---------------------------------------------|---------------------------------------------|
-| *Home Page *, *Movies Browsing*             | *Genres*                         | *Most Popular*                           |
+| ![Screenshot 1](screenshots/home.jpeg) | ![Screenshot 2](screenshots/genrs.jpeg) |
+|---------------------------------------|-----------------------------------------|
+| Home Page                           | Genres                               |
 
-| ![Screenshot 4](screenshots/popularmovies.jpeg) | ![Screenshot 5](screenshots/tvshows.jpeg) | ![Screenshot 6](screenshots/comingsoon.jpeg) |
-|---------------------------------------------|---------------------------------------------|---------------------------------------------|
-| *Popular Movies*                    | *Featured Tv-shows*                    | *Upcoming Movies*                        |
+| ![Screenshot 3](screenshots/popular.jpeg) | ![Screenshot 4](screenshots/popularmovies.jpeg) |
+|-------------------------------------------|-----------------------------------------------|
+| Most Popular                            | Popular Movies                             |
 
-| ![Screenshot 7](screenshots/popularnetworks.jpeg) | ![Screenshot 8](screenshots/arabicnetworks.jpeg) | ![Screenshot 9](screenshots/anime-networks.jpeg) |
-|---------------------------------------------|---------------------------------------------|---------------------------------------------|
-| *Global Broadcast Networks*                  | *Arabic Networks*                  | *Anime Networks*                           |
+| ![Screenshot 5](screenshots/tvshows.jpeg) | ![Screenshot 6](screenshots/comingsoon.jpeg) |
+|-------------------------------------------|---------------------------------------------|
+| Featured TV-shows                       | Upcoming Movies                          |
 
-| ![Screenshot 10](screenshots/ed&doc-networks.jpeg) | ![Screenshot 11](screenshots/sport-networks.jpeg) | ![Screenshot 12](screenshots/movie-modal.jpeg) |
-|-----------------------------------------------|-----------------------------------------------|-----------------------------------------------|
-| *Docm and advn Networks*                         | *Sport Networks*                      | *Movie-modal display*                            |
+| ![Screenshot 7](screenshots/popularnetworks.jpeg) | ![Screenshot 8](screenshots/arabicnetworks.jpeg) |
+|--------------------------------------------------|--------------------------------------------------|
+| Global Broadcast Networks                      | Arabic Networks                               |
 
-| ![Screenshot 13](screenshots/movie-modal-cont.jpeg) | ![Screenshot 14](screenshots/playlist.jpeg) | |
-|-----------------------------------------------|-----------------------------------------------|-----------------------------------------------|
-| *Recom and cast modal*                            | *Playliste-with-filter*                           | |
+| ![Screenshot 9](screenshots/anime-networks.jpeg) | ![Screenshot 10](screenshots/ed&doc-networks.jpeg) |
+|--------------------------------------------------|---------------------------------------------------|
+| Anime Networks                                 | Doc and Educational Networks                    |
+
+| ![Screenshot 11](screenshots/sport-networks.jpeg) | ![Screenshot 12](screenshots/movie-modal.jpeg) |
+|--------------------------------------------------|------------------------------------------------|
+| Sport Networks                                 | Movie Modal Display                           |
+
+| ![Screenshot 13](screenshots/movie-modal-cont.jpeg) | ![Screenshot 14](screenshots/playlist.jpeg) |
+|----------------------------------------------------|---------------------------------------------|
+| Recommendation and Cast Modal                    | Playlist with Filter                      |
