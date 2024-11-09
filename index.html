@@ -6,6 +6,7 @@
     <title>سينما بلس - عالم الترفيه اللامتناهي</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.0.1/chart.min.js"></script>
     <style>
@@ -134,14 +135,14 @@
 
     .search-bar button {
         position: absolute;
-        right: 0;
+        left: 0;
         top: 0;
         height: 100%;
         padding: 0 1.5rem;
         background-color: var(--secondary-color);
         color: var(--text-color);
         border: none;
-        border-radius: 0 50px 50px 0;
+        border-radius: 50px 0 0 50px;
         cursor: pointer;
         transition: background-color 0.3s ease;
     }
@@ -308,18 +309,27 @@
     }
 
     .close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        color: white;
+        font-size: 24px;
         cursor: pointer;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        transition: all 0.3s ease;
     }
 
     .close:hover,
     .close:focus {
-        color: #fff;
-        text-decoration: none;
-        cursor: pointer;
+        background: rgba(255, 0, 0, 0.4);
+        transform: rotate(90deg);
     }
 
     .modal-header {
@@ -924,18 +934,18 @@
 
         <!--Latestes Trailers-->
         <div class="loading" id="loading"></div>
-    <section class="hero1">
-        <div class="hero-bg1"></div>
-        <div class="hero-content1">
-            <h1>أفلام قادمة</h1>
-            <div class="categories" id="categories">
-                <button class="category active" data-category="upcoming">قادمة</button>
-                <button class="category" data-category="popular">شائعة</button>
-                <button class="category" data-category="top_rated">الأعلى تقييماً</button>
+        <section class="hero1">
+            <div class="hero-bg1"></div>
+            <div class="hero-content1">
+                <h1>أفلام قادمة</h1>
+                <div class="categories" id="categories">
+                    <button class="category active" data-category="upcoming">قادمة</button>
+                    <button class="category" data-category="popular">شائعة</button>
+                    <button class="category" data-category="top_rated">الأعلى تقييماً</button>
+                </div>
+                <div class="trailers-container" id="trailersContainer"></div>
             </div>
-            <div class="trailers-container" id="trailersContainer"></div>
-        </div>
-    </section>
+        </section>
         <!--Networks-->
         <section id="networks" class="networks">
             <h2 class="section-title">شبكات البث العالمية</h2>
@@ -982,8 +992,7 @@
             </div>
         </div>
 
-        
-
+      
     
     </main>
 
@@ -1001,6 +1010,31 @@
             <div class="modal-footer">
                 <button onclick="closeModal()">إغلاق</button>
             </div>
+        </div>
+    </div>
+
+    <div id="playlistModal" class="playlist-modal">
+        <div class="playlist-content">
+            <button class="close-modal">&times;</button>
+            <div class="playlist-header">
+                <h2>قائمة المشاهدة</h2>
+                <div class="rating-filter">
+                    <select id="ratingFilter">
+                        <option value="all">جميع التقييمات</option>
+                        <option value="9">9+ نجوم</option>
+                        <option value="8">8+ نجوم</option>
+                        <option value="7">7+ نجوم</option>
+                        <option value="6">6+ نجوم</option>
+                    </select>
+                </div>
+            </div>
+            <div class="playlist-tabs">
+                <button class="playlist-tab active" data-type="all">الكل</button>
+                <button class="playlist-tab" data-type="movies">أفلام</button>
+                <button class="playlist-tab" data-type="series">مسلسلات</button>
+                <button class="playlist-tab" data-type="anime">أنمي</button>
+            </div>
+            <div class="playlist-items" id="playlistItems"></div>
         </div>
     </div>
 
@@ -1105,7 +1139,7 @@
                 }
             }, 100);
         }
-    });
+         });
     
     // Helper to check if audio is playing
     Object.defineProperty(HTMLMediaElement.prototype, 'playing', {
@@ -1113,10 +1147,6 @@
             return !!(this.currentTime > 0 && !this.paused && !this.ended && this.readyState > 2);
         }
     });
-    
-
-    
-
     
 
     async function fetchData(endpoint) {
@@ -1134,9 +1164,13 @@
         }
     }
 
+    // Modify the existing createMovieCard function to include drag attributes
     function createMovieCard(item) {
         return `
-            <div class="movie-card" data-id="${item.id}" data-type="${item.media_type || (item.first_air_date ? 'tv' : 'movie')}">
+            <div class="movie-card" 
+                 draggable="true" 
+                 data-id="${item.id}" 
+                 data-type="${item.media_type || (item.first_air_date ? 'tv' : 'movie')}">
                 <img src="${IMG_BASE_URL}${item.poster_path}" alt="${item.title || item.name}">
                 <div class="movie-info">
                     <h3 class="movie-title">${item.title || item.name}</h3>
@@ -1149,7 +1183,8 @@
             </div>
         `;
     }
-
+    
+    
     async function displayMovies(endpoint, containerId) {
         const container = document.getElementById(containerId);
         const data = await fetchData(endpoint);
@@ -1452,6 +1487,164 @@ function createNetworkItem(network) {
     }
 
 
+    //playliste Modal
+    // Initialize watchlist in localStorage if it doesn't exist
+    if (!localStorage.getItem('watchlist')) {
+        localStorage.setItem('watchlist', JSON.stringify([]));
+    }
+    
+    
+    // Add event listener for the add-to-list buttons
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('add-to-list') || 
+            (e.target.parentElement && e.target.parentElement.classList.contains('add-to-list'))) {
+            const movieCard = e.target.closest('.movie-card');
+            const movieId = movieCard.dataset.id;
+            const movieType = movieCard.dataset.type;
+            
+            // Convert type to match our tab data-types
+            let watchlistType;
+            if (movieType === 'movie') {
+                watchlistType = 'movies';
+            } else if (movieType === 'tv') {
+                watchlistType = 'series';
+            } else if (movieType === 'anime') {
+                watchlistType = 'anime';
+            }
+            
+            addToWatchlist(movieId, movieType, watchlistType);
+        }
+    });
+    // X    
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('add-to-list') || 
+            (e.target.parentElement && e.target.parentElement.classList.contains('add-to-list'))) {
+            const movieCard = e.target.closest('.movie-card');
+            const movieId = movieCard.dataset.id;
+            const movieType = movieCard.dataset.type;
+            addToWatchlist(movieId, movieType);
+        }
+    });
+    
+    // Add event listener for My List link
+    document.querySelector('a[href="#mylist"]').addEventListener('click', function(e) {
+        e.preventDefault();
+        showWatchlist();
+    });
+    
+    
+    // Handle watchlist tabs
+    document.querySelectorAll('.playlist-tab').forEach(tab => {
+        tab.addEventListener('click', function() {
+            document.querySelectorAll('.playlist-tab').forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            displayWatchlistItems(this.dataset.type);
+        });
+    });
+    
+    // Handle rating filter
+    document.getElementById('ratingFilter').addEventListener('change', function() {
+        displayWatchlistItems(document.querySelector('.playlist-tab.active').dataset.type);
+    });
+    
+    //add to watschlist
+    async function addToWatchlist(id, apiType, watchlistType) {
+        const watchlist = JSON.parse(localStorage.getItem('watchlist'));
+        if (!watchlist.some(item => item.id === id)) {
+            const itemData = await fetchData(`/${apiType}/${id}`);
+            const watchlistItem = {
+                id: id,
+                type: watchlistType, // This will be 'movies', 'series', or 'anime'
+                apiType: apiType,    // This will be 'movie' or 'tv' for API calls
+                title: itemData.title || itemData.name,
+                poster_path: itemData.poster_path,
+                vote_average: itemData.vote_average
+            };
+            watchlist.push(watchlistItem);
+            localStorage.setItem('watchlist', JSON.stringify(watchlist));
+            showNotification('تمت الإضافة إلى قائمة المشاهدة');
+        }
+    }
+    
+    
+    function showWatchlist() {
+        document.getElementById('playlistModal').style.display = 'block';
+        displayWatchlistItems('all');
+    }
+    
+    //display Watch list
+    function displayWatchlistItems(filterType) {
+        const watchlist = JSON.parse(localStorage.getItem('watchlist'));
+        const ratingFilter = parseFloat(document.getElementById('ratingFilter').value);
+        
+        let filteredItems = watchlist;
+        
+        // Filter by type
+        if (filterType !== 'all') {
+            filteredItems = watchlist.filter(item => item.type === filterType);
+        }
+        
+        // Filter by rating
+        if (ratingFilter) {
+            filteredItems = filteredItems.filter(item => item.vote_average >= ratingFilter);
+        }
+    
+        const container = document.getElementById('playlistItems');
+        
+        if (filteredItems.length === 0) {
+            container.innerHTML = '<div class="empty-message">لا توجد عناصر في هذه القائمة</div>';
+            return;
+        }
+    
+        container.innerHTML = filteredItems.map(item => `
+            <div class="playlist-item" data-id="${item.id}" data-type="${item.apiType}">
+                <img src="${IMG_BASE_URL}${item.poster_path}" alt="${item.title}">
+                <div class="playlist-item-info">
+                    <h3>${item.title}</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <span>${item.vote_average.toFixed(1)}</span>
+                    </div>
+                </div>
+                <button class="remove-from-list" onclick="removeFromWatchlist('${item.id}')">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </div>
+        `).join('');
+    }
+
+    
+    function removeFromWatchlist(id) {
+        let watchlist = JSON.parse(localStorage.getItem('watchlist'));
+        watchlist = watchlist.filter(item => item.id !== id);
+        localStorage.setItem('watchlist', JSON.stringify(watchlist));
+        displayWatchlistItems(document.querySelector('.playlist-tab.active').dataset.type);
+        showNotification('تم الحذف من قائمة المشاهدة');
+    }
+    
+    function showNotification(message) {
+        const notification = document.createElement('div');
+        notification.className = 'notification';
+        notification.textContent = message;
+        document.body.appendChild(notification);
+        setTimeout(() => {
+            notification.remove();
+        }, 2000);
+    }
+    
+    // Close modal when clicking the close button or outside the modal
+    document.querySelector('.close-modal').addEventListener('click', () => {
+        document.getElementById('playlistModal').style.display = 'none';
+    });
+    
+    
+
+    window.addEventListener('click', (e) => {
+        const modal = document.getElementById('playlistModal');
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
 
     //Latest Trailers
     async function fetchMovies(category) {
